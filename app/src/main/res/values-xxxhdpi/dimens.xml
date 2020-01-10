@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  TODO: Change dimens according to design  -->
+<resources>
+    <dimen name="radius_round">12dp</dimen>
+    <dimen name="progress_view_padding">10dp</dimen>
+    <dimen name="user_avatar_size">50dp</dimen>
+    <dimen name="user_avatar_margin">10dp</dimen>
+    <dimen name="username_margin">10dp</dimen>
+    <dimen name="tweet_content_margin">10dp</dimen>
+    <dimen name="date_content_margin">10dp</dimen>
+    <dimen name="global_divider_height">0.5dp</dimen>
+    <dimen name="tweet_recycler_view_margin">5dp</dimen>
+    <dimen name="search_tweets_margin">10dp</dimen>
+    <dimen name="search_tweets_text_size">30sp</dimen>
+</resources>

@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xmaxerrs" << "500"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:$rootProject.androidxAppCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.androidMaterialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidxConstraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.androidxRecyclerViewVersion"
+    implementation "androidx.cardview:cardview:$rootProject.androidxCardViewVersion"
+    implementation "androidx.multidex:multidex:$rootProject.androidxMultiDexVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.androidxLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.androidxLifecycleVersion"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:$rootProject.androidxLifecycleVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxbindingVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rootProject.rxretrofitadapterVersion"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    implementation "com.github.bumptech.glide:annotations:$rootProject.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide"
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    compileOnly "org.glassfish:javax.annotation:$rootProject.glassfishVersion"
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+}

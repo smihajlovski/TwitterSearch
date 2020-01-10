@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TwitterSearch</string>
+    <string name="search">Search</string>
+    <string name="search_tweets">Search for tweets</string>
+    <string name="empty_space">&#160;</string>
+
+    <!--  Errors  -->
+    <string name="can_not_find_tweets">Ooops can\'t find any tweets</string>
+    <string name="no_connection">Please check your connection.</string>
+    <string name="timeout">Oops timeout. Try again?</string>
+</resources>
